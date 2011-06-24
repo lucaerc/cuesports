@@ -1,10 +1,12 @@
-#ifndef TAVOLO_CPP_
-#define TAVOLO_CPP_
-#include "tavolo.h"
+#ifndef Table_CPP_
+#define Table_CPP_
+#include "Table.h"
 #include <cmath>
 
-bool Tavolo::impactx(const position pos ,const velocity v)
-{
+bool Table::impactx(const ball b)
+{   
+    position pos=b.r();
+    velocity v=b.v();
     float xvelocity=v.x; //copiamo le variabili perché dobbiamo farci delle operazioni senza modificarne il valore
     float xposition=pos.x;
    
@@ -28,8 +30,10 @@ bool Tavolo::impactx(const position pos ,const velocity v)
     return false;
 }
 
-bool Tavolo::impacty(const position pos ,const velocity v)
+bool Table::impacty(const ball b)
 {
+    position pos=b.r();
+    velocity v=b.v();
     //copiamo le variabili perché dobbiamo farci delle operazioni senza modificarne il valore
     float yvelocity=v.y;
     float yposition=pos.y;
@@ -54,9 +58,11 @@ bool Tavolo::impacty(const position pos ,const velocity v)
     return false;
 }
 
-position Tavolo::poi(const position pos, const velocity v)
+position Table::poi(const ball b)
 {
-    if (impactx(pos,v)==TRUE)
+    position pos=b.r();
+    velocity v=b.v();
+    if (impactx(b)==TRUE)
     {
         float t;
         float x;
@@ -75,7 +81,7 @@ position Tavolo::poi(const position pos, const velocity v)
         return poi;
     }
     
-    if (impacty(pos,v)==TRUE)
+    if (impacty(b)==TRUE)
     {
         float t;
         if (v.y>0){ 
@@ -93,7 +99,7 @@ position Tavolo::poi(const position pos, const velocity v)
         return poi;
     }
     
-    if (impactx(pos,v)==false and impacty==false) //Nessun impatto
+    if (impactx(b)==false and impacty==false) //Nessun impatto
     {
         throw NO_IMPACT;
         return pos;
@@ -101,13 +107,16 @@ position Tavolo::poi(const position pos, const velocity v)
     
 }
 
-velocity Tavolo::newspeed(position pos, velocity v)
+velocity Table::newspeed(const ball b)
 {
-    if (impactx(pos, v)==FALSE and impacty(pos,v)==false) return v; //se non c'è impatto, la velocità rimane la stessa
+    position pos=b.r();
+    velocity v=b.v();
+    
+    if (impactx(b)==FALSE and impacty(b)==false) return v; //se non c'è impatto, la velocità rimane la stessa
     
     float vx,vy;
     
-    if(impactx(pos,v)=true)
+    if(impactx(b)=true)
     {   
         float toi;
         if (v.x>0)toi=(sqrt((2*atd*xlenght)-(2*atd*pos.x)+(v.x*v.x))-v.x)/atd; 
@@ -121,7 +130,7 @@ velocity Tavolo::newspeed(position pos, velocity v)
         return newspeed;
     }
     
-    if(impacty(pos,v)=true)
+    if(impacty(b)=true)
     {   
         float toi;
         if (v.y>0)toi=(sqrt((2*atd*ylenght)-(2*atd*pos.y)+(v.y*v.y))-v.y)/atd; 
