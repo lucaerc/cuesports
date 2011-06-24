@@ -1,6 +1,7 @@
 
 classe ball
 _r (metodo per la sup occupata)
+_w (peso)
 _coordinate(una miniclasse vect_r) --si potrebbe fare in coord polari?
 _velocità(altra classe che interagise con coordinate e il metodo hit)
 
