@@ -32,7 +32,7 @@ _r.y+=_v.dy(t);
 
 
 void ball::hit(double F, double angle) {
-cout << "ehm" << endl;
+
 }
 
 void ball::show() {
