@@ -17,26 +17,24 @@ weight=1.;
 diameter=57.15;
 }
 
-void ball::setv(double vx, double vy) {
-_v=velocity(vx,vy);
-}
 
 ball::~ball() {}
 
 double ball::S() {return diameter*3.14;}
 
+//
 void ball::move(double t) {
 _r.x+=_v.dx(t);
 _r.y+=_v.dy(t);
 }
 
+void ball::setv(double vx, double vy) {
+_v=velocity(vx,vy);
+}
+
 
 void ball::hit(double F, double angle) {
 
-}
-
-void ball::show() {
-cout << "r = (" <<_r.x << ", " << _r.y << ")\nv = (" <<_v.x << ", " << _v.y << ")" << endl;
 }
 
 
