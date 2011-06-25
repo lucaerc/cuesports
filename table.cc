@@ -1,5 +1,3 @@
-#ifndef Table_CPP_
-#define Table_CPP_
 #include "Table.h"
 #include <cmath>
 
@@ -146,5 +144,3 @@ velocity Table::newspeed(const ball b)
     }
                             
 }
-
-#endif
