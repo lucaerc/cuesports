@@ -12,6 +12,7 @@ private:
     float ylenght;
     
 public:
+    Table(const Table& t){atd=t.atd; ats=t.ats; xlenght=t.xlenght; ylenght=t.ylenght;} //copy constructor
     Table(float X, float Y,float ATD,float ATS){atd=ATD; ats=ATS; xlenght=X; ylenght=Y;}
     ~Table();
     
