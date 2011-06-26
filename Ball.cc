@@ -31,7 +31,7 @@ return *this;
 Ball::Ball(double x, double y) {
 _r=Position(x,y);
 _v=Velocity();
-weight=163.01; // g 5.5/6 oncie
+weight=163.01; // g 5.5/6 once
 diameter=57.15; //mm
 }
 
