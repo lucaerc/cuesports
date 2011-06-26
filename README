@@ -1,0 +1,48 @@
+
+classe ball
+_r (metodo per la sup occupata)
+_w (peso)
+_coordinate(una miniclasse vect_r) --si potrebbe fare in coord polari?
+_velocità(altra classe che interagise con coordinate e il metodo hit)
+
+metodi
+double circ (2 pigreco r)
+void hit (forza, angolazione)
+
+più avanti:
+void hurt()???
+
+
+
+
+international /american
+diametro 57.15 mm 0.127 mm
+
+
+snooker balls
+52.5 pm 0.05 mm
+
+
+
+
+(2:1 ratio)
+
+Table Sizes:
+Pocket billiard Tables..............................................4 by 8 and 4 1/2 by 9
+Carom Billiard Tables..............................................4 1/2 by 9 and 5 by 10
+American Snooker Tables........................................4 1/2 by 9 and 5 by 10
+
+Playing Area: Measured from the cloth covered nose of cushion rubber to the opposite cushion rubber, both width and length:
+4 by 8 table...................................playing area 44" width by 88" length
+4 by 8 oversize table........................playing area of 46" width by 92" length
+4 1/2 by 9 table.............................playing area of 50" width by 100" length
+5 by 10 table.................................playing area of 56" width by 112" length
+
+Pocket Billiard Balls:
+Weight: 5 1/2 to 6 oz. / *Diameter: 2 1/4"
+
+Carom Balls:
+Weight: 7 to 7 1/2 oz. / * Diameter: 2 27/64", 2 3/8", 2 7/16"
+
+Snooker Balls:
+Weight: 5 to 5 1/2 oz. / * Diameter: 2 1/8", 2 1/16" *Diameter tolerance of .005
