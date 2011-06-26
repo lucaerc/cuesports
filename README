@@ -1,22 +1,7 @@
 
-classe ball
-_r (metodo per la sup occupata)
-_w (peso)
-_coordinate(una miniclasse vect_r) --si potrebbe fare in coord polari?
-_velocità(altra classe che interagise con coordinate e il metodo hit)
-
-metodi
-double circ (2 pigreco r)
-void hit (forza, angolazione)
-
-più avanti:
-void hurt()???
-
-
-
 
 international /american
-diametro 57.15 mm 0.127 mm
+diametro 57.15 mm pm 0.127 mm
 
 
 snooker balls
