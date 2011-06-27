@@ -1,9 +1,12 @@
 
 class Stick {
-double J; //fornito dall'utente
-double angle; //fornito dall'utente
-double tau; //è una costante
+double _J; //fornito dall'utente
+double _angle; //fornito dall'utente
+double _tau; //è una costante
 
 public:
+Stick(double J, double angle);
+~Stick();
 
+void hit(Ball & other);
 };

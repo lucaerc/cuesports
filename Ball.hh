@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <cmath>
-#include<cstdlib>
+#include <cstdlib>
 
 struct Position {
 double x, y;
@@ -32,7 +32,7 @@ Velocity& operator=(const Velocity &);
 class Ball {
 Position _r;
 Velocity _v;
-double mass, diameter,mupp;
+double _mass, _diameter, _mu_pp;
 public:
 Ball(double x=0, double y=0);
 ~Ball();
@@ -40,12 +40,8 @@ Ball(double x=0, double y=0);
 Position r();
 Velocity v();
 
-void hurt(double F, double angle); // i parametri sono F e angle, deve settare la velocità a F*tau/weight (??)
-//void setv(double, double); --------non dobbiamo mai settare direttamente la velocità, ma solo tramite interazioni di tipo hurt hit--------------
-void move(double t);
-void hit(Ball & other); //deve semplicemente modificare le velocità, non le posizioni, e venir chiamato da Table quando le r() di due balle si sovrappongono
-void hurt(Cushion & other);
-
+void hurt(Impulse J); //è unico per qualsiasi tipo
+void hit(Ball & other);
 };
 
 #endif
