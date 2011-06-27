@@ -5,7 +5,6 @@
 #include <cmath>
 #include<cstdlib>
 
-
 struct Position {
 double x, y;
 Position(double _x=0, double _y=0);
@@ -33,7 +32,7 @@ Velocity& operator=(const Velocity &);
 class Ball {
 Position _r;
 Velocity _v;
-double weight, diameter;
+double mass, diameter,mupp;
 public:
 Ball(double x=0, double y=0);
 ~Ball();
