@@ -8,5 +8,5 @@ public:
 Stick(double J, double angle);
 ~Stick();
 
-void hit(Ball & other);
+void hit(Ball & ball);
 };
