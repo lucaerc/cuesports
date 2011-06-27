@@ -41,10 +41,10 @@ Ball(double x=0, double y=0);
 Position r();
 Velocity v();
 
-void hit(double F, double angle); // i parametri sono F e angle, deve settare la velocità a F*tau/weight (??)
+void hurt(double F, double angle); // i parametri sono F e angle, deve settare la velocità a F*tau/weight (??)
 //void setv(double, double); --------non dobbiamo mai settare direttamente la velocità, ma solo tramite interazioni di tipo hurt hit--------------
 void move(double t);
-void hurt(Ball & other); //deve semplicemente modificare le velocità, non le posizioni, e venir chiamato da Table quando le r() di due balle si sovrappongono
+void hit(Ball & other); //deve semplicemente modificare le velocità, non le posizioni, e venir chiamato da Table quando le r() di due balle si sovrappongono
 void hurt(Cushion & other);
 
 };
