@@ -12,7 +12,7 @@ void Stick::hit(Ball & ball){
     double Jx=F*sin(angle)*_tau; //siccome l'angolo è lungo la verticale, il seno restituisce x e il coseno y
     double Jy=F*cos(angle)*_tau;
     
-    Impulse J(Jx,Jy); //questo andrà modificato quando avrai definito Impulse
+    Impulse J(Jx,Jy);
     
     ball.hurt(J); //trasmette l'impulso alla palla ball
     
