@@ -16,7 +16,9 @@ return *this;
 
 vect2d vect2d::operator+(const vect2d obj) { return vect2d(x+obj.x,y+obj.y); }
 
-double vect2d::operator*(const vect2d obj) { return (x*obj.x+y*obj.y); }
+double vect2d::operator*(const vect2d obj) { return vect2d(x*obj.x+y*obj.y); }
+
+vect2d vect2d::operator/(const double a); { return vect2d(x/a,y/a); }
 
 //----------------------------------------derived classes------------------------------------------------
 

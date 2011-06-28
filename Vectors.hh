@@ -12,6 +12,7 @@ vect2d(vect2d);
 vect2d& operator=(const vect2d &);
 vect2d operator+(const vect2d);
 double operator*(const vect2d);
+vect2d operator/(const double);
 };
 
 struct Position : vect2d {
@@ -36,7 +37,6 @@ Impulse(double jx=0, double jy=0);
 Impulse(Impulse);
 ~Impulse();
 
-//forse è il caso di fare un metodo che dato un impulso modifichi la velocità, da chiamare in hit ecc? (J=deltaP=m deltav)
 };
 
 
