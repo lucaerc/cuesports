@@ -1,3 +1,7 @@
+#ifndef CUSHION_
+#define CUSHION_
+
+#include "Ball.hh"
 
 class Cushion { //sponda verticale
 
@@ -10,4 +14,4 @@ Cushion();
 void hurt(Ball & other);
 };
 
-
+#endif

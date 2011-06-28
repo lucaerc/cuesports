@@ -1,3 +1,9 @@
+#ifndef STICK_
+#define STICK_
+
+#include <cmath>
+#include "Ball.hh"
+#include "Vectors.hh"
 
 class Stick {
     
@@ -15,3 +21,5 @@ public:
     
     
 };
+
+#endif

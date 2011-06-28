@@ -1,3 +1,6 @@
+#ifndef TABLE_
+#define TABLE_
+
 #include "Ball.hh"
 #include "Cushion.hh"
 
@@ -15,3 +18,4 @@ void play(Ball & ball);
 
 };
 
+#endif

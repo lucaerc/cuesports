@@ -1,7 +1,0 @@
-Stick non rappresenta fisicamente la stecca da bigliardo ma bensì rappresenta un colpo della stecca da bigliardo. E' caratterizzata da due grandezze imposte dall'utente: forza del colpo, angolo rispetto all'asse Y del tavolo (parallelo al lato lungo). Viene utilizzato l'asse Y perché il colpo "più naturale" è lungo tale asse.
-Il tau, la durata dell'urto, è costante.
-
-Una volta costruito lo Stick secondo tali grandezze, può essere invocato hit: viene calcolato l'impulso vettoriale (implementato a parte) trasferito alla palla sulla base della forza, dell'angolo e del tau.
-Utilizzando il metodo hurt di ball viene quindi trasferito questo impulso alla palla. Viene utilizzato il booleano _didsend e il relativo metodo didsend per chiarire che il colpo è stato effettuato.
-
-A questo punto l'oggetto ha esaurito la sua funzione e può essere distrutto.

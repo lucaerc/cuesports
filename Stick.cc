@@ -1,5 +1,5 @@
 #include "Stick.hh"
-#include <cmath>
+
 
 Stick::Stick(double F, double angle){
     _F=F;
