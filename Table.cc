@@ -33,6 +33,8 @@ Ball & Table::move(double t){
         }
     }
     
+    else v.x=0;
+    
     if (v.y!=0) {
         if (v.y>0){
             r.y = v.y * t - .5*(g*_cr*t*t)/m;
@@ -45,6 +47,8 @@ Ball & Table::move(double t){
             if (v.y>0) v.y=0;
         }
     }
+    
+    else v.y=0;
     
     new Ball result(r,v);
     return *result;
