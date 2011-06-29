@@ -6,15 +6,19 @@
 
 
 class Table {
-Ball * _ball;
-Cushion _down, _up, _left, _right;
-//coefficienti di attrito
-double _mu_s, _mu_d, _mu_v;
+    double _h,_l; //altezza, lunghezza
+    Ball * _ball;
+    Cushion _down, _up, _left, _right;
+    //coefficienti di attrito
+    double _mu_s, _cr; //cr è l'attrito volvente
+    
 
 public:
 
-Ball & move(Ball & moved, double t);
-void play(Ball & ball);
+    Table(h,l,mu,cr);
+    Ball & move(double t); //muove la palla che ha come attributo
+    void play(Ball & ball);
+    void setball(Ball & ball);
 
 };
 

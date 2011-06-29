@@ -27,7 +27,7 @@ Position::Position(Position other) { x=other.x); y=other.y; } //fare initializat
 Position::~Position() { }
 
 
-Velocity::Velocity(double vx, double vy) : vect2d(vx, vy) { }
+Velocity::Velocity(double vx=0, double vy=0) : vect2d(vx, vy) { }
 Velocity::Velocity(Velocity other) {y=other.y; x=other.x; }
 Velocity::~Velocity() {}
 
@@ -35,3 +35,4 @@ Velocity::~Velocity() {}
 Impulse::Impulse(double jx=0, double jy=0) :vect2d(jx, jy) { }
 Impulse::Impulse(Impulse other) {y=other.y; x=other.x; }
 Impulse::~Impulse();
+
