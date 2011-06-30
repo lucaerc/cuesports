@@ -10,12 +10,12 @@ class Table {
     Ball * _ball;
     Cushion _down, _up, _left, _right;
     //coefficienti di attrito
-    double _mu_s, _cr; //cr è l'attrito volvente
+    double _mu_s, _mu_v; //_mu_v è l'attrito volvente
     
 
 public:
 
-    Table(h,l,mu,cr);
+    Table(h,l,mus,muv);
     Ball & move(double t); //muove la palla che ha come attributo
     void play(Ball & ball);
     void setball(Ball & ball);
