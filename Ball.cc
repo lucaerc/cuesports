@@ -3,18 +3,28 @@
 using namespace std;
 
 
-Ball::Ball(double x, double y) {
+Ball::Ball(double x=0, double y=0, double vx=0, double vy=0) {
 _r=Position(x,y);
-_v=Velocity();
-_mass=163.01; // g 5.5/6 once
-_diameter=57.15; //mm
+_v=Velocity(vx,vy);
+_mass=0.16301; // kg 5.5/6 once
+_diameter=0.05715; //m
 _mu_pp=1.;
 }
+
+Ball::Ball(Position r, Velocity v){
+    _r=r;
+    _v=v;
+    _mass=0.16301; // kg 5.5/6 once
+    _diameter=0.05715; //m
+    _mu_pp=1.;
+}
+
 
 Ball::~Ball() {}
 
 Position Ball::r() { return _r; }
 Velocity Ball::v() { return _v; }
+double Ball::m() {return _m;}
 
 void Ball::hurt(Impulse J) {
 _v.x+=(5./7.)*J.x/_mass;
