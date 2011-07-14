@@ -18,7 +18,7 @@ public:
     Table(h,l,mus,muv);
     Ball & move(double t); //muove la palla che ha come attributo
     void play(Ball & ball);
-    void setball(Ball & ball);
+    void setball();
 
 };
 

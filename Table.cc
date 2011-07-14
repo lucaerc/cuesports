@@ -14,8 +14,8 @@ void Table::setball(Ball & ball){
 }
 
 Ball & Table::move(double t){
-    Velocity v=ball.v();
-    Position r=ball.r();
+    Velocity v=_ball.v();
+    Position r=_ball.r();
     
     double g=9.81;
     
@@ -52,4 +52,16 @@ Ball & Table::move(double t){
     
     new Ball result(r,v);
     return *result;
+}
+
+void Ball::play() {
+    double t=0;
+    for (int i=0; _ball.v!=0; t=t+0.001) {
+        move(t);
+        if (_ball.r().x=0) _left.hurt(_ball);
+        if (_ball.r().x=_l) _right.hurt(_ball);
+        if (_ball.r().y=0) _down.hurt(_ball);
+        if (_ball.r().y=_h) _up.hurt(_ball);
+        
+    }
 }
