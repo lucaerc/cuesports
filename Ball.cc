@@ -25,6 +25,10 @@ Ball::~Ball() {}
 Position Ball::r() { return _r; }
 Velocity Ball::v() { return _v; }
 double Ball::m() {return _m;}
+double Ball::d() {return _diameter;}
+double Ball::distancefrom(Ball b) {
+    return(sqrt((_r.x-b.r().x)*(_r.x-b.r().x)+(_r.y-b.r().y)*(_r.y-b.r().y)));
+}
 
 void Ball::hurt(Impulse J) {
 _v.x+=(5./7.)*J.x/_mass;

@@ -25,11 +25,18 @@ vect2d vect2d::operator/(const double a); { return vect2d(x/a,y/a); }
 Position::Position(double px=0, double py=0): vect2d(px, py) { }
 Position::Position(Position other) { x=other.x); y=other.y; } //fare initialization lists sui copy constructor?
 Position::~Position() { }
+double Position::distancefrom(Position p2) {
+    return(sqrt((x-p2.x)*(x-p2.x)+(y-p2.y)*(y-p2.y)));
+}
 
 
 Velocity::Velocity(double vx=0, double vy=0) : vect2d(vx, vy) { }
 Velocity::Velocity(Velocity other) {y=other.y; x=other.x; }
 Velocity::~Velocity() {}
+bool Velocity::stopped(){
+    if (x=0 and y=0) return TRUE;
+    else return FALSE;
+}
 
 
 Impulse::Impulse(double jx=0, double jy=0) :vect2d(jx, jy) { }

@@ -17,16 +17,18 @@ vect2d operator/(const double);
 
 struct Position : vect2d {
 
-Position(double px=0, double py=0);
-Position(Position);
-~Position();
+    Position(double px=0, double py=0);
+    Position(Position);
+    ~Position();
+    double distancefrom(Position p2);
 };
 
 struct Velocity : vect2d {
 
-Velocity(double vx=0, double vy=0);
-Velocity(Velocity);
-~Velocity();
+    Velocity(double vx=0, double vy=0);
+    Velocity(Velocity);
+    ~Velocity();
+    bool stopped();
 
 Position dr(double dt) { return Position(x*dt,y*dt); } //incremento della posizione data una velocità e un dt
 };
