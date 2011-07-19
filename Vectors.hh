@@ -29,8 +29,6 @@ struct Velocity : vect2d {
     Velocity(Velocity);
     ~Velocity();
     bool stopped();
-
-Position dr(double dt) { return Position(x*dt,y*dt); } //incremento della posizione data una velocità e un dt
 };
 
 struct Impulse : vect2d {
