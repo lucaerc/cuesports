@@ -1,0 +1,54 @@
+Table.cc: In member function ‘void Table::play()’:
+Table.cc:71:46: error: ‘_ball’ was not declared in this scope
+Table.cc:72:26: error: ‘class Ball’ has no member named ‘x’
+Table.cc:72:44: error: ‘_ball’ was not declared in this scope
+Table.cc:73:26: error: ‘class Ball’ has no member named ‘y’
+Table.cc:73:42: error: ‘_ball’ was not declared in this scope
+Table.cc:74:26: error: ‘class Ball’ has no member named ‘y’
+Table.cc:74:41: error: ‘_ball’ was not declared in this scope
+Table.cc:77:90: error: no match for ‘operator<=’ in ‘((Table*)this)->Table::balls.std::vector<_Tp, _Alloc>::operator[] [with _Tp = Ball, _Alloc = std::allocator<Ball>, std::vector<_Tp, _Alloc>::reference = Ball&, std::vector::size_type = unsigned int](((unsigned int)j)) <= ((((Ball*)((Table*)this)->Table::balls.std::vector<_Tp, _Alloc>::operator[] [with _Tp = Ball, _Alloc = std::allocator<Ball>, std::vector<_Tp, _Alloc>::reference = Ball&, std::vector::size_type = unsigned int](((unsigned int)i)))->Ball::d() * 5.0e-1) + (((Ball*)((Table*)this)->Table::balls.std::vector<_Tp, _Alloc>::operator[] [with _Tp = Ball, _Alloc = std::allocator<Ball>, std::vector<_Tp, _Alloc>::reference = Ball&, std::vector::size_type = unsigned int](((unsigned int)j)))->Ball::d() * 5.0e-1))’
+Table.cc:77:93: error: expected ‘)’ before ‘{’ token
+Table.cc:80:17: error: expected primary-expression before ‘}’ token
+Table.cc:80:17: error: expected ‘;’ before ‘}’ token
+Table.cc:83:1: error: expected ‘}’ at end of input
+Vectors.cc:6:1: error: prototype for ‘vect2d::vect2d(const vect2d&)’ does not match any in class ‘vect2d’
+Vectors.hh:9:1: error: candidates are: vect2d::vect2d(vect2d&)
+Vectors.cc:5:1: error:                 vect2d::vect2d(double, double)
+Vectors.cc: In member function ‘vect2d vect2d::operator+(vect2d)’:
+Vectors.cc:17:75: error: no matching function for call to ‘vect2d::vect2d(vect2d)’
+Vectors.hh:9:1: note: candidates are: vect2d::vect2d(vect2d&)
+Vectors.cc:5:1: note:                 vect2d::vect2d(double, double)
+Vectors.cc: In member function ‘double vect2d::operator*(vect2d)’:
+Vectors.cc:19:75: error: cannot convert ‘vect2d’ to ‘double’ in return
+Vectors.cc: At global scope:
+Vectors.cc:21:40: error: declaration of ‘vect2d vect2d::operator/(double)’ outside of class is not definition
+Vectors.cc:21:43: error: expected unqualified-id before ‘{’ token
+Vectors.cc:25:44: error: default argument given for parameter 1 of ‘Position::Position(double, double)’
+Vectors.hh:20:5: error: after previous specification in ‘Position::Position(double, double)’
+Vectors.cc:25:44: error: default argument given for parameter 2 of ‘Position::Position(double, double)’
+Vectors.hh:20:5: error: after previous specification in ‘Position::Position(double, double)’
+Vectors.cc: In copy constructor ‘Position::Position(const Position&)’:
+Vectors.cc:26:55: error: expected ‘;’ before ‘)’ token
+Vectors.cc: At global scope:
+Vectors.cc:34:44: error: default argument given for parameter 1 of ‘Velocity::Velocity(double, double)’
+Vectors.hh:28:5: error: after previous specification in ‘Velocity::Velocity(double, double)’
+Vectors.cc:34:44: error: default argument given for parameter 2 of ‘Velocity::Velocity(double, double)’
+Vectors.hh:28:5: error: after previous specification in ‘Velocity::Velocity(double, double)’
+Vectors.cc: In member function ‘bool Velocity::stopped()’:
+Vectors.cc:39:19: error: lvalue required as left operand of assignment
+Vectors.cc:39:29: error: ‘TRUE’ was not declared in this scope
+Vectors.cc:40:17: error: ‘FALSE’ was not declared in this scope
+Vectors.cc: At global scope:
+Vectors.cc:44:42: error: default argument given for parameter 1 of ‘Impulse::Impulse(double, double)’
+Vectors.hh:36:1: error: after previous specification in ‘Impulse::Impulse(double, double)’
+Vectors.cc:44:42: error: default argument given for parameter 2 of ‘Impulse::Impulse(double, double)’
+Vectors.hh:36:1: error: after previous specification in ‘Impulse::Impulse(double, double)’
+Vectors.cc:46:19: error: declaration of ‘Impulse::~Impulse()’ outside of class is not definition
+Stick.cc: In constructor ‘Stick::Stick(double, double)’:
+Stick.cc:8:5: error: ‘_didsend’ was not declared in this scope
+Stick.cc: In member function ‘void Stick::hit(Ball&)’:
+Stick.cc:12:15: error: ‘F’ was not declared in this scope
+Stick.cc:12:21: error: ‘angle’ was not declared in this scope
+Stick.cc:19:5: error: ‘_didsend’ was not declared in this scope
+Stick.cc: In member function ‘bool Stick::didsend()’:
+Stick.cc:24:12: error: ‘_didsend’ was not declared in this scope

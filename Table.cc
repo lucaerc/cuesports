@@ -1,6 +1,8 @@
 #include "Table.hh"
 
-Table::Table(h,l,mus,muv) {
+using namespace std; 
+
+Table::Table(double h, double l, double mus, double muv) {
     _h=h;
     _l=l;
     _mu_s=mus;
@@ -8,17 +10,14 @@ Table::Table(h,l,mus,muv) {
         
 }
 
-void Table::setball(Ball & ball){
-    delete _ball;
-    _ball=ball;
-}
+Ball Table::setball(Ball ball){ return ball; }
 
 int Table::move(double t){
     int size=balls.size();
     int stopped=0;
     for (int i=0; i<size; i++) {
-        Velocity v=balls.at(i).v();
-        Position r=balls.at(i).r();
+        Velocity v=balls[i].v();
+        Position r=balls[i].r();
         
         double g=9.81;
         
@@ -52,10 +51,12 @@ int Table::move(double t){
         }
         
         else v.y=0;
-        if (balls.at(i).v().stopped=TRUE and v.stopped=FALSE) stopped--;
-        if (balls.at(i).v().stopped=FALSE and v.stopped=TRUE) stopped++;
 
-        balls.at(i)=new Ball result(r,v);
+        if (balls[i].v().stopped()==true and v.stopped()==false) stopped--;
+        if (balls[i].v().stopped()==false and v.stopped()==true) stopped++;
+
+        
+        balls[i]=setball(Ball(r,v));
         
     }
     return stopped;
@@ -64,17 +65,17 @@ int Table::move(double t){
 void Table::play() {
     double t=0;
     int stopped=0;
-    for (t=0;stopped<balls.size(); t=t+0.01) {
-        stopped=move(); //controlla che tutte le palle non siano ferme
+    for (t=0;stopped<balls.size(); t+=0.01) {
+        stopped=move(t); //controlla che tutte le palle non siano ferme
         for (int i=0; i<balls.size(); i++) {
-            if (balls.at(i).r().x=0) _left.hurt(_ball);
-            if (balls.at(i).x=_l) _right.hurt(_ball);
-            if (balls.at(i).y=0) _down.hurt(_ball);
-            if (balls.at(i).y=_h) _up.hurt(_ball);
+            if (balls[i].r().x=0) _left.hurt(_ball);
+            if (balls[i].x=_l) _right.hurt(_ball);
+            if (balls[i].y=0) _down.hurt(_ball);
+            if (balls[i].y=_h) _up.hurt(_ball);
             for (int j=0; j<balls.size(); j++) { //controlla se sono pi vicini della somma dei raggi
                 if (j!=i){
-                    if (balls.at(i).distancefrom(balls.at(j)<= (.5*balls.at(i).d()+.5*balls.at(j).d())) {
-                        balls.at(i).hit(balls.at(j));
+                    if (balls[i].distancefrom(balls[j]<= (.5*balls[i].d()+.5*balls[j].d())) {
+                        balls[i].hit(balls[j]);
                     }
                 }
             }

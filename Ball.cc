@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Ball::Ball(double x=0, double y=0, double vx=0, double vy=0) {
+Ball::Ball(double x, double y, double vx, double vy) {
 _r=Position(x,y);
 _v=Velocity(vx,vy);
 _mass=0.16301; // kg 5.5/6 once
@@ -24,7 +24,7 @@ Ball::~Ball() {}
 
 Position Ball::r() { return _r; }
 Velocity Ball::v() { return _v; }
-double Ball::m() {return _m;}
+double Ball::m() {return _mass;}
 double Ball::d() {return _diameter;}
 double Ball::distancefrom(Ball b) {
     return(sqrt((_r.x-b.r().x)*(_r.x-b.r().x)+(_r.y-b.r().y)*(_r.y-b.r().y)));

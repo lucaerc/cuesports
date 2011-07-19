@@ -14,7 +14,7 @@ class Ball {
 public:
     Ball(double x=0, double y=0, double vx=0, double vy=0);
     Ball(Position r, Velocity v);
-    Ball(Position r, Velocity v);
+
     ~Ball();
 
     Position r();
