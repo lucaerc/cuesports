@@ -1,0 +1,2 @@
+Non viene considerato il moto strisciante. Affinché la palla strisci deve avere un momento maggiore del momento d'attrito statico: la palla è sottoposta ad una forza e dunque un momento solo nell'intervallo di tempo tau, che è piccolo.
+Possiamo evitare completamente il problema trasferendo forza invece che momento.

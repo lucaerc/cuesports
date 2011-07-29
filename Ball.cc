@@ -31,9 +31,9 @@ double Ball::distancefrom(Ball b) {
 }
 
 void Ball::hurt(Impulse J) {
-_v.x+=(5./7.)*J.x/_mass;
-_v.y+=(5./7.)*J.y/_mass;
-//ho trascurato lo spostamento di posizione nel tratto in cui rotola strisciando!
+    _v.x+=(5./7.)*J.x/_mass;
+    _v.y+=(5./7.)*J.y/_mass;
+//vedi nota
 }
 //va implementata la possibilità di un urto NON centrale, cioè con distanza h(verticale) rispetto al cm della palla
 

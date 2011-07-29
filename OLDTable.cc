@@ -144,3 +144,23 @@ velocity Table::newspeed(const ball b)
     }
                             
 }
+
+void Table::play() {
+    double t=0;
+    int stopped=0;
+    for (t=0;stopped<balls.size(); t+=0.01) {
+        stopped=move(t); //controlla che tutte le palle non siano ferme
+        for (int i=0; i<balls.size(); i++) {
+            if (balls[i].r().x=0) _left.hurt(_ball);
+            if (balls[i].x=_l) _right.hurt(_ball);
+            if (balls[i].y=0) _down.hurt(_ball);
+            if (balls[i].y=_h) _up.hurt(_ball);
+            for (int j=0; j<balls.size(); j++) { //controlla se sono più vicini della somma dei raggi
+                if (j!=i){
+                    if (balls[i].distancefrom(balls[j]<= (.5*balls[i].d()+.5*balls[j].d())) {
+                        balls[i].hit(balls[j]);
+                    }
+                        }
+                        }
+                        }
+                        }

@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper,onecolumn]{report}
+
+\begin{document}
+\title{Documentazione sul programma del tavolo da biliardo}, \author{Federico
+D'Ambrosio, Luca Ercole}
+\maketitle
+\section{La classe Table}
+\subsection{Muovere le palle}
+Utilizzare le leggi orarie per muovere le palle istante per istante, seppure sia
+fisicamente più corretto, introduce un'incertezza dovuta alla "quantizzazione"
+del tempo oltre a pesare consistentemente sul computer. \newline 
+A noi interessa sapere \emph{dove} andrà la palla per sapere quale evento dovrà
+scattare e solo successivamente il \emph{quando} per calcolare la velocità della
+palla dopo l'urto.
+Ipotizziamo che tutti gli attriti possano essere compensati in un coefficiente
+\alpha, che sarà uguale per entrambe le direzioni:
+\begin{equation}
+x=x_0+\alpha (t) v_x t \newline
+y=y_0+\alpha (t) v_y t	\newline
+\end{equation}
+Allora:
+\begin{equation}
+y=y_0+\frac{v_y}{v_x} (x-x_0) \end{equation}
+Possiamo quindi valutare per ogni palla di posizione x_p,y_p se si toccano
+in un qualsiasi momento nella traiettoia, ovvero se i centri delle due palle
+sono ad una distanza minore del raggio della palla r:
+\begin{equation}y_p-(y_0+\frac{v_y}{v_x} (x_p-x_0)) \leq r \end{equation}
+Se risponde positivamente al controllo, andiamo a calcolare il tempo e la velocità
+della palla in quel punto con le leggi orarie.
+Altrimenti verifichiamo quale sponda tocca:
+\begin{equation} y=y_0+\frac{v_y}{v_x} (-x_0) \label{sponda sinistra}\end{equation}\newline
+\begin{equation} y=y_0+\frac{v_y}{v_x} (L-x_0) \label{sponda destra}\end{equation}\newline
+\begin{equation} 0=y_0+\frac{v_y}{v_x} (x-x_0) \label{sponda inferiore}\end{equation}\newline
+\begin{equation} H=y_0+\frac{v_y}{v_x} (x-x_0) \label{sponda superiore}\end{equation}\newline
+Solamente una di queste può avere l'altra cordinata valida, ovvero compresa nel tavolo.
+A questo punto possiamo calcolare tempo e velocità.
+\end{document}
+
