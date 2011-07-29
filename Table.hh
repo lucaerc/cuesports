@@ -16,10 +16,14 @@ class Table {
 public:
 
     Table(double h, double l, double mus, double muv);
-    int move(double t); //ritorna il numero di palle che non si muovono più
-    void play();
-    Ball setball(Ball);
     ~Table();
+    void addball(double x=0, double y=0, double vx=0, double vy=0);
+    void addball(Position R, Velocity V);
+    double mu();
+    
+    void check(Ball b);
+    void play(double delta=0.01);
+    
 };
 
 #endif
