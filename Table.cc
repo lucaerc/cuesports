@@ -14,12 +14,12 @@ double Table::mu() {
 }
 
 void Table::addball(double x=0, double y=0, double vx=0, double vy=0){
-    Ball b(x,y,vx,vy);
+    Ball b(x,y,vx,vy,*this); //assegna se stesso come tavolo
     balls.pushback(b);
 }
 
 void addball(Position R, Velocity V){
-    Ball b(R,V);
+    Ball b(R,V,*this); //assegna se stesso come tavolo
     balls.pushback(b);
 }
 

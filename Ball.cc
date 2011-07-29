@@ -3,20 +3,22 @@
 using namespace std;
 
 
-Ball::Ball(double x, double y, double vx, double vy) {
-r=Position(x,y);
-v=Velocity(vx,vy);
-_mass=0.16301; // kg 5.5/6 once
-_diameter=0.05715; //m
-_mu_pp=1.;
+Ball::Ball(double x, double y, double vx, double vy, table & tab) {
+    r=Position(x,y);
+    v=Velocity(vx,vy);
+    _mass=0.16301; // kg 5.5/6 once
+    _diameter=0.05715; //m
+    _mu_pp=1.;
+    table=tab;
 }
 
-Ball::Ball(Position R, Velocity V){
+Ball::Ball(Position R, Velocity V, table & tab){
     r=R;
     v=V;
     _mass=0.16301; // kg 5.5/6 once
     _diameter=0.05715; //m
     _mu_pp=1.;
+    table=tab;
 }
 
 

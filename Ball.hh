@@ -14,8 +14,8 @@ class Ball {
     Table & table;
     
 public:
-    Ball(double x=0, double y=0, double vx=0, double vy=0);
-    Ball(Position R, Velocity V);
+    Ball(double x=0, double y=0, double vx=0, double vy=0, table & tab);
+    Ball(Position R, Velocity V, table & tab);
 
     ~Ball();
 
