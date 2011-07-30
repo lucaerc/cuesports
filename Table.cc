@@ -7,6 +7,10 @@ Table::Table(double h, double l, double mus, double muv) {
     _l=l;
     _mu_s=mus;
     _mu_v=muv;
+    _up=Cushion(1,-1,.3,this);
+    _down=Cushion(1,-1,.3,this);
+    _left=Cushion(-1,1,.3,this);
+    _right=Cushion(-1,1,.3,this);
         
 }
 double Table::mu() {
@@ -14,12 +18,12 @@ double Table::mu() {
 }
 
 void Table::addball(double x=0, double y=0, double vx=0, double vy=0){
-    Ball b(x,y,vx,vy,*this); //assegna se stesso come tavolo
+    Ball b(x,y,vx,vy,this); //assegna se stesso come tavolo
     balls.pushback(b);
 }
 
 void addball(Position R, Velocity V){
-    Ball b(R,V,*this); //assegna se stesso come tavolo
+    Ball b(R,V,this); //assegna se stesso come tavolo
     balls.pushback(b);
 }
 

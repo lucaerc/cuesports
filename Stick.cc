@@ -4,7 +4,7 @@
 Stick::Stick(double F, double angle){
     _F=F;
     _angle=angle;
-    _tau=0.;//valore di tau
+    _tau=0.01;//valore di tau
     _didsend=false;
 }
 

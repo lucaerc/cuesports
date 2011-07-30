@@ -5,13 +5,16 @@
 
 class Cushion { //sponda verticale
 
-double Jassobito; // DA RIVEDERE impulso assorbito nell'urto con la sponda
+    double percentage; // La sponda assorbe una percentuale di energia cinetica
+    double xchange;
+    double ychange;
+    Table * table;
 
 public:
-    Cushion();
+    Cushion(double xc, double yc, double p=0.3, table * tab);
     ~Cushion();
 
-    void hurt(Ball & other);
+    void hurt(Ball & ball);
 };
 
 #endif

@@ -82,6 +82,7 @@ void Ball::move(double delta) {
     else v.y=0;
     
     table.check(this);
+    
         
 }
 
