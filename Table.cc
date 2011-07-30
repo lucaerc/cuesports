@@ -37,9 +37,15 @@ void Table::check(Ball b) {
 }
                     
 void Table::play(double delta) {
-    for (int i=0; i<=balls.size(); i++) {
-        balls[i].move(delta); //prende il delta di default
-    }
+    int stopped=0;
+    do {
+        stopped=0;
+        for (int i=0; i<=balls.size(); i++) {
+            balls[i].move(delta); //prende il delta di default
+            if (balls[i].didstop()==TRUE) stopped++;
+        }
+    } while (stopped<balls[i].size());
+        
 }
 
 

@@ -29,6 +29,11 @@ Velocity Ball::v() { return v; }
 double Ball::m() {return _mass;}
 double Ball::d() {return _diameter;}
 
+bool Ball::didstop() {
+    if (v.x=0 and v.y=0) return TRUE;
+    else return FALSE;
+    }
+
 double Ball::distancefrom(Ball b) {
     return(sqrt((r.x-b.r().x)*(r.x-b.r().x)+(r.y-b.r().y)*(r.y-b.r().y)));
 }
@@ -37,6 +42,7 @@ void Ball::hurt(Impulse J) {
     stopped=false;
     v.x+=(5./7.)*J.x/_mass;
     v.y+=(5./7.)*J.y/_mass;
+    this.move();
 }
 
 //va implementata la possibilità di un urto NON centrale, cioè con distanza h(verticale) rispetto al cm della palla
@@ -76,9 +82,7 @@ void Ball::move(double delta) {
     else v.y=0;
     
     table.check(this);
-    
-    if (v.x=0 and v.y=0) stopped=true;
-    
+        
 }
 
 void Ball::hit(Ball & other) {
