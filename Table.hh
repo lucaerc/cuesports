@@ -10,12 +10,12 @@ class Table {
     std::vector <Ball> balls;
     Cushion _down, _up, _left, _right;
     //coefficienti di attrito
-    double _mu_s, _mu_v; //_mu_v è l'attrito volvente
+    double _mu_v; //_mu_v è l'attrito volvente
     
 
 public:
 
-    Table(double h, double l, double mus, double muv);
+    Table(double h, double l, double muv);
     ~Table();
     void addball(double x=0, double y=0, double vx=0, double vy=0);
     void addball(Position R, Velocity V);

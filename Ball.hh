@@ -5,6 +5,7 @@
 #include <cmath>
 #include <cstdlib>
 #include "Vectors.hh"
+#include "Table.hh"
 
 class Ball {
     Position r;
@@ -13,7 +14,7 @@ class Ball {
     Table * table;
     
 public:
-    Ball(double x=0, double y=0, double vx=0, double vy=0, table * tab);
+    Ball(double x=0, double y=0, double vx=0, double vy=0, Table * tab);
     Ball(Position R, Velocity V, table * tab);
 
     ~Ball();

@@ -2,10 +2,9 @@
 
 using namespace std; 
 
-Table::Table(double h, double l, double mus, double muv) {
+Table::Table(double h, double l, double muv) {
     _h=h;
     _l=l;
-    _mu_s=mus;
     _mu_v=muv;
     _up=Cushion(1,-1,.3,this);
     _down=Cushion(1,-1,.3,this);

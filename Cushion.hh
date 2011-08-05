@@ -2,6 +2,7 @@
 #define CUSHION_
 
 #include "Ball.hh"
+#include "Table.hh"
 
 class Cushion { //sponda verticale
 
