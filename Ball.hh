@@ -25,6 +25,7 @@ public:
     double m();
     double d(); //restituisce diametro
     double distancefrom(Ball b); //distanza in modulo da un'altra palla
+    double distancefrom(Position p);
     
     void hurt(Impulse J); //è unico per qualsiasi tipo
     void hit(Ball & other);

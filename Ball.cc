@@ -38,6 +38,9 @@ double Ball::distancefrom(Ball b) {
     return(sqrt((r.x-b.r().x)*(r.x-b.r().x)+(r.y-b.r().y)*(r.y-b.r().y)));
 }
 
+double Ball::distancefrom(Position p) {
+    return(sqrt((r.x-p.x)*(r.x-p.x)+(r.y-p.y)*(r.y-p.y)));
+}
 void Ball::hurt(Impulse J) {
     stopped=false;
     v.x+=(5./7.)*J.x/_mass;

@@ -48,7 +48,26 @@ void Table::play(double delta) {
             if (balls[i].didstop()==TRUE) stopped++;
         }
     } while (stopped<balls[i].size());
-        
+    
+           
+}
+
+void Table::draw(int characters){ //quanti caratteri ho di spazio orizzontale?
+    double div=(_h/characters);
+    for (int i=0; i<=_h; i+div) cout<<"_"; //bordo superiore
+    
+    for (double x=div; x<_l; x+div) {
+        cout<<"|"; //bordo per ogni riga
+        for (double y=div; y<_h; y+div) { //il verticale viene messo in orizzontale per esigenze di schermo, i bordi li sto facendo di merda
+            for (int i=0; i<=balls.size(); i++) {
+                Position p(x,y);
+                if (balls[i].distancefrom(p)<(sqrt(2)*div)) cout<<"X";
+                else cout<<" ";
+            }
+        }
+        cout<<"|"; //bordo di fine riga
+    }
+    for (int i=0; i<=_h; i+div) cout<<"_"; //bordo inferiore
 }
 
 
