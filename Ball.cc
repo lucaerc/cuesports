@@ -52,17 +52,18 @@ void Ball::hurt(Impulse J) {
 
 void Ball::move(double delta) {
     const double g=9.81;
+    double a= g*table.mu()/(r*r); //accelerazione
     
     if (v.x!=0) {   //M_attrito=m*g*table.mu()/r, F_attrito=m*g*table.mu()/(r*r), a_attrito=g*table.mu()/(r*r) la massa non serve più
         if (v.x>0){
-            r.x = v.x * delta - .5*(g*table.mu()*delta*delta)/(r*r); //questo funziona con t piccolo, altrimenti la palla torna indietro!
-            v.x = v.x - (g*table.mu()*delta)/(r*r);
+            r.x += v.x * delta; //questo funziona con t piccolo, altrimenti la palla torna indietro!
+            v.x -= a * delta;
             if (v.x<0) v.x=0;
             
         }
         if (v.x<0){
-            r.x = v.x * delta + .5*(g*table.mu()*delta*delta)/(r*r);
-            v.x = v.x + (g*table.mu()*delta)/(r*r);
+            r.x += v.x * delta;
+            v.x += a * delta;
             if (v.x>0) v.x=0;
         }
     }
@@ -71,13 +72,13 @@ void Ball::move(double delta) {
     
     if (v.y!=0) {
         if (v.y>0){
-            r.y = v.y * delta - .5*(g*table.mu()*delta*delta)/(r*r);
-            v.y = v.y - (g*table.mu()*delta)/(r*r);
+            r.y += v.y * delta;
+            v.y -= a * delta;
             if (v.y<0) v.y=0;
         }
         if (v.y<0){
-            r.y = v.y * delta + .5*(g*table.mu()*delta*delta)/(r*r);
-            v.y = v.y + (g*table.mu()*delta)/(r*r);
+            r.y += v.y * delta;
+            v.y += a * delta;
             if (v.y>0) v.y=0;
         }
     }
